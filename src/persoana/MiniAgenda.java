@@ -87,11 +87,11 @@ public static void main(String[] args) {
                 search = in.next();
 
                 for(int i=0; i<contacts.size(); i++){
-                    contact = (contacts.get(i)).toString();
+                    contact = (contacts.get(i).DaNume());
 
 
-                    if(contact.contains("Name: "+search)){
-                        System.out.println(contacts.get(i));
+                    if(contact.equals(search)){
+
                         System.out.println("Please edit the name");
                         Persoana c = new Persoana();
                         System.out.print("\nNume: ");
@@ -100,9 +100,12 @@ public static void main(String[] args) {
                         c.AgendaTelefon(in.nextLong());
                         System.out.print("\nVarsta: ");
                         c.AgendaVarsta(in.nextInt());
+                        contacts.add(c);
+                        contacts.remove(i);
+
 
                     }
-                    Persoana c = contacts.get(i);
+                    
                 }
         break;
 
